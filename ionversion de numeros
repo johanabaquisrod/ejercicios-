@@ -1,0 +1,31 @@
+[6:55 p.m., 25/5/2024] Andi: }
+[6:55 p.m., 25/5/2024] Andi: package Ejercicios.argv.com;
+
+import javas Scanner;
+
+public class Palindromo {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ingresa Palabra");
+		String palabra = scanner.nextLine();
+		char [] palindromo;
+		palindromo = palabra.toCharArray();
+		int izquierda = 0;
+		int derecha = palindromo.length - 1;
+		palabra = palabra.toLowerCase();		
+		while(izquierda < derecha) {
+			if(palindromo[izquierda] == palindromo[derecha]) {
+				derecha --;
+				izquierda ++;
+				
+			}else {
+				System.out.println("Palabra no es palindromo");
+				break;
+			}
+		}
+		if(izquierda == derecha) {
+			System.out.println("Palabra si es palindromo");
+		}
+	}
+}
