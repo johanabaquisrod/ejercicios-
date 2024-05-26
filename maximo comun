@@ -1,0 +1,47 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Cálculo del MCD
+        System.out.println("Ingrese el número:");
+        System.out.println("Ingrese el número:");
+        int num2 = scanner.nextInt();
+        int mcd = calcularMCD(num1, num2);
+        System.out.println("El MCD de " + num1 + " y " + num2 + " es: " + mcd);
+
+        // Juego de adivinar el número
+        System.out.println("\nBienvenido al juego de adivinar el número!");
+        System.out.println("Estoy pensando en un número entre 1 y 100. Adivina cuál es:");
+
+        Random random = new Random();
+        int numeroAleatorio = random.nextInt(100) + 1;
+        int intentos = 0;
+        boolean adivinado = false;
+
+        while (!adivinado) {
+            int intento = scanner.nextInt();
+            intentos++;
+
+            if (intento == numeroAleatorio) {
+                adivinado = true;
+                System.out.println("¡Felicidades! Has adivinado el número " + numeroAleatorio + " en " + intentos + " intentos.");
+            } else if (intento < numeroAleatorio) {
+                System.out.println("El número es mayor. Intenta de nuevo:");
+            } else {
+                System.out.println("El número es menor. Intenta de nuevo:");
+            }
+        }
+
+        scanner.close();
+    }
+
+    // Método para calcular el MCD utilizando el algoritmo de Euclides
+    public static int calcularMCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+}
