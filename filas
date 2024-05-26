@@ -1,0 +1,25 @@
+package Ejercicios.com;
+
+import java.util.Scanner;
+
+public class MCD {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el numero");
+        int numeroUno = scanner.nextInt();
+        System.out.println("Ingrese umero");
+        int numeroDos = scanner.nextInt();
+        scanner.close(); 
+        int valorUno = Math.max(numeroUno, numeroDos);
+        int valorDos = Math.min(numeroUno, numeroDos);
+        int resto;
+
+        do {
+            resto = valorDos;
+            valorDos = valorUno % valorDos;
+            valorUno = resto;
+        } while (valorDos != 0);
+
+        System.out.println("El MCD entre es: " + resto);
+    }
