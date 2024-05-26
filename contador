@@ -1,0 +1,14 @@
+package Ejercicios.com;
+
+import java.util.Scanner;
+
+public class ContadorDeDigitos {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese un Numero");
+        int numero = scanner.nextInt();
+        scanner.close();
+        int tamano = Integer.toString(numero).length();
+        System.out.println("El numero tiene " + tamano + " digitos.");
+    }
