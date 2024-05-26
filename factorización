@@ -1,0 +1,23 @@
+package Ejercicios. com;
+
+import java.util.Scanner;
+
+public class FactoresPrimos {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner (System.in);
+		System.out.println("Ingrese un numero");
+		int numero = scanner.nextInt();
+		System.out.println("Los Factores son: ");
+		
+		for(int i = 2; i <= numero; i++) {
+			while(numero % i == 0) {
+				System.out.println(i + " ");
+				numero = numero / i;
+				
+			}
+			if(numero == 1) {
+				break;
+			}
+		}
+	}
+}
